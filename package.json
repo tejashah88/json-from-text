@@ -1,0 +1,23 @@
+{
+  "name": "json-from-text",
+  "version": "0.0.1",
+  "description": "An algorithm for separating embedded JSON from a string, nicely packaged into a node.js module.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tejashah88/json-from-text.git"
+  },
+  "author": "tejashah88",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tejashah88/json-from-text/issues"
+  },
+  "homepage": "https://github.com/tejashah88/json-from-text#readme",
+  "dependencies": {
+    "jsonic": "^0.3.0",
+    "xregexp": "^3.2.0"
+  }
+}

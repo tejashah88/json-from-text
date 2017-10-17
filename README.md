@@ -9,7 +9,16 @@ Object json_from_text(String json_string, Boolean parse_to_json = true)
 #### Parameters:
 * **`json_string`**: The string to parse the JSON from the text.
 * **`options.parse_to_json`**: If set to false, the resulting JSON strings will not be translated to JSON objects. Default is **true**.
-* **`options.transform_function`**: If specified, this function is called on any individual JSON string discovered before parsing into a JSON object/array. This is ignored if **`options.parse_to_json`** is set to **false**.
+* **`options.transform_function`**: If specified, this function transforms all individual JSON strings discovered before parsing. This is ignored if **`options.parse_to_json`** is set to **false**.
+
+Syntax of `options.transform_function`
+```javascript
+options.transform_function = function(old_json_string) {
+  var new_json_string;
+  // do transformations here
+    return new_json_string;
+}
+```
 
 Note that the actual parsing of the JSON is done thanks to [jsonic](https://github.com/rjrodger/jsonic), which allows the structure of the JSON in question to be more lenient (i.e. fields don't need quotes, single quotes allowed, trailing commas, etc.).
 

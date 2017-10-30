@@ -3,7 +3,7 @@ An algorithm for separating embedded JSON from a string, nicely packaged into a 
 
 ## Usage
 ```javascript
-Object json_from_text(String json_string, Boolean parse_to_json = true)
+Object json_from_text(String json_string, Object options)
 ```
 
 #### Parameters:
@@ -16,7 +16,7 @@ Syntax of `options.transform_function`
 options.transform_function = function(old_json_string) {
   var new_json_string;
   // do transformations here
-    return new_json_string;
+  return new_json_string;
 }
 ```
 
@@ -72,6 +72,4 @@ Output:
     }
   ]
 }
-
-
 ```

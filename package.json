@@ -1,6 +1,6 @@
 {
   "name": "json-from-text",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An algorithm for separating embedded JSON from a string, nicely packaged into a node.js module.",
   "main": "index.js",
   "scripts": {

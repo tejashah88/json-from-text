@@ -1,4 +1,7 @@
 # json-from-text
+
+![NPM Version](https://img.shields.io/npm/v/json-from-text.svg)
+
 An algorithm for separating embedded JSON from a string, nicely packaged into a node.js module.
 
 ## Usage

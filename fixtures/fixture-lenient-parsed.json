@@ -1,0 +1,41 @@
+{
+  "textResults": [
+    "The brown ",
+    " jumped over the ",
+    " dog"
+  ],
+  "jsonResults": [
+    {
+      "animal": "fox"
+    },
+    {
+      "attribute": "lazy"
+    }
+  ],
+  "fullResults": [
+    {
+      "type": "text",
+      "value": "The brown "
+    },
+    {
+      "type": "json",
+      "value": {
+        "animal": "fox"
+      }
+    },
+    {
+      "type": "text",
+      "value": " jumped over the "
+    },
+    {
+      "type": "json",
+      "value": {
+        "attribute": "lazy"
+      }
+    },
+    {
+      "type": "text",
+      "value": " dog"
+    }
+  ]
+}

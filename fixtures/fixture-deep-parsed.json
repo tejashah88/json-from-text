@@ -1,0 +1,37 @@
+{
+  "textResults": [
+    "What in the ",
+    " world would that be?"
+  ],
+  "jsonResults": [
+    {
+      "map": {
+        "one": 1,
+        "two": 2,
+        "three": 3
+      },
+      "word": "world"
+    }
+  ],
+  "fullResults": [
+    {
+      "type": "text",
+      "value": "What in the "
+    },
+    {
+      "type": "json",
+      "value": {
+        "map": {
+          "one": 1,
+          "two": 2,
+          "three": 3
+        },
+        "word": "world"
+      }
+    },
+    {
+      "type": "text",
+      "value": " world would that be?"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "textResults": [
+    "This is a normal sentence."
+  ],
+  "jsonResults": [],
+  "fullResults": [
+    {
+      "type": "text",
+      "value": "This is a normal sentence."
+    }
+  ]
+}

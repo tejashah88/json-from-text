@@ -1,0 +1,33 @@
+{
+  "textResults": [
+    "There was a change from '",
+    "' to '",
+    "'"
+  ],
+  "jsonResults": [
+    "{'animal':'dog', 'color':'blue'}",
+    "{'animal':'cat', 'color':'red'}"
+  ],
+  "fullResults": [
+    {
+      "type": "text",
+      "value": "There was a change from '"
+    },
+    {
+      "type": "json",
+      "value": "{'animal':'dog', 'color':'blue'}"
+    },
+    {
+      "type": "text",
+      "value": "' to '"
+    },
+    {
+      "type": "json",
+      "value": "{'animal':'cat', 'color':'red'}"
+    },
+    {
+      "type": "text",
+      "value": "'"
+    }
+  ]
+}

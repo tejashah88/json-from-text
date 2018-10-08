@@ -1,0 +1,16 @@
+{
+  "textResults": [],
+  "jsonResults": [
+    {
+      "animal": "duck"
+    }
+  ],
+  "fullResults": [
+    {
+      "type": "json",
+      "value": {
+        "animal": "duck"
+      }
+    }
+  ]
+}

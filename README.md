@@ -1,6 +1,6 @@
 # json-from-text
 
-![NPM Version](https://img.shields.io/npm/v/json-from-text.svg)
+[![NPM Version](https://img.shields.io/npm/v/json-from-text.svg)](https://www.npmjs.com/package/json-from-text)
 [![Build Status](https://travis-ci.org/tejashah88/json-from-text.svg?branch=master)](https://travis-ci.org/tejashah88/json-from-text)
 [![Coverage Status](https://coveralls.io/repos/github/tejashah88/json-from-text/badge.svg)](https://coveralls.io/github/tejashah88/json-from-text)
 [![dependencies Status](https://david-dm.org/tejashah88/json-from-text/status.svg)](https://david-dm.org/tejashah88/json-from-text)

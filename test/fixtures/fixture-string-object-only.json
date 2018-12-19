@@ -8,6 +8,7 @@
   "fullResults": [
     {
       "type": "json",
+      "parsed": true,
       "value": {
         "animal": "duck"
       }

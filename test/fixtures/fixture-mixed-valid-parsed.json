@@ -5,8 +5,10 @@
     " dog"
   ],
   "jsonResults": [
-    "{animal: 'fox'}",
-    "{attribute: 'lazy'}"
+    {
+      "animal": "fox"
+    },
+    "{<\"attribute\": \"lazy\">}"
   ],
   "fullResults": [
     {
@@ -15,7 +17,10 @@
     },
     {
       "type": "json",
-      "value": "{animal: 'fox'}"
+      "parsed": true,
+      "value": {
+        "animal": "fox"
+      }
     },
     {
       "type": "text",
@@ -23,7 +28,8 @@
     },
     {
       "type": "json",
-      "value": "{attribute: 'lazy'}"
+      "parsed": false,
+      "value": "{<\"attribute\": \"lazy\">}"
     },
     {
       "type": "text",

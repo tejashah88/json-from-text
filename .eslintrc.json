@@ -10,10 +10,13 @@
   },
   "extends": "eslint:recommended",
   "rules": {
-    "require-await": "error",
+    "prefer-const": ["warn", { "destructuring": "any", "ignoreReadBeforeAssign": false }],
+    "strict": ["error", "global"],
+    "no-console": "error",
+    "no-unused-vars": "warn",
+    "no-var": "error",
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
-    "semi": ["error", "always"],
-    "no-var": 2
+    "semi": ["error", "always"]
   }
 }

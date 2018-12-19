@@ -1,7 +1,7 @@
 'use strict';
 
 const expect = require('chai').expect;
-const jsonFromText = require('./index');
+const jsonFromText = require('../src/index');
 
 const normalString = 'This is a normal sentence.';
 const fixtureStringOnly = require('./fixtures/fixture-string-only.json');
@@ -21,72 +21,77 @@ const sampleTextLenient = "The brown {animal: 'fox'} jumped over the {attribute:
 const fixtureLenientParsed = require('./fixtures/fixture-lenient-parsed.json');
 const fixtureLenientUnparsed = require('./fixtures/fixture-lenient-unparsed.json');
 
+const sampleTextMixedValid = 'The brown {"animal": "fox"} jumped over the {<"attribute": "lazy">} dog';
+const fixtureMixedValidParsed = require('./fixtures/fixture-mixed-valid-parsed.json');
+
 describe('basic forms', function () {
   it('should parse regular strings as normal', function () {
-    let results = jsonFromText(normalString);
+    const results = jsonFromText(normalString);
     expect(results).to.deep.equal(fixtureStringOnly);
   });
 
   it('should parse a stringified JSON object', function () {
-    let results = jsonFromText(normalStringObject);
+    const results = jsonFromText(normalStringObject);
     expect(results).to.deep.equal(fixtureStringObjectOnly);
   });
 });
 
 describe('shallow embedded JSON', function () {
   it('should seperate text and JSON, and parse JSON text into objects', function () {
-    let results = jsonFromText(sampleTextShallow);
+    const results = jsonFromText(sampleTextShallow);
     expect(results).to.deep.equal(fixtureShallowParsed);
   });
 
   it('should seperate text and JSON, but NOT parse JSON text into objects', function () {
-    let results = jsonFromText(sampleTextShallow, false);
+    const results = jsonFromText(sampleTextShallow, false);
     expect(results).to.deep.equal(fixtureShallowUnparsed);
   });
 });
 
 describe('deep embedded JSON', function () {
   it('should seperate text and JSON, and parse JSON text into objects', function () {
-    let results = jsonFromText(sampleTextDeep);
+    const results = jsonFromText(sampleTextDeep);
     expect(results).to.deep.equal(fixtureDeepParsed);
   });
 
   it('should seperate text and JSON, but NOT parse JSON text into objects', function () {
-    let results = jsonFromText(sampleTextDeep, false);
+    const results = jsonFromText(sampleTextDeep, false);
     expect(results).to.deep.equal(fixtureDeepUnparsed);
   });
 });
 
 describe('lenient embedded JSON', function () {
   it('should seperate text and JSON, and parse JSON text into objects', function () {
-    let results = jsonFromText(sampleTextLenient);
+    const results = jsonFromText(sampleTextLenient);
     expect(results).to.deep.equal(fixtureLenientParsed);
   });
 
   it('should seperate text and JSON, but NOT parse JSON text into objects', function () {
-    let results = jsonFromText(sampleTextLenient, false);
+    const results = jsonFromText(sampleTextLenient, false);
     expect(results).to.deep.equal(fixtureLenientUnparsed);
+  });
+});
+
+describe('mixed valid/invalid JSON', () => {
+  it('should parse any potential JSON objects whenever possible and if it fails, leave it alone', function() {
+    const results = jsonFromText(sampleTextMixedValid);
+    expect(results).to.deep.equal(fixtureMixedValidParsed);
   });
 });
 
 describe('error handling', function () {
   it('should throw an error when given a non-string', function () {
-    let thrower = () => jsonFromText(0);
+    const thrower = () => jsonFromText(0);
     expect(thrower).to.throw(Error, "Given string is not actually a string or it's empty!");
   });
 
   it('should throw an error when given an empty string', function () {
-    let thrower = () => jsonFromText('');
-    expect(thrower).to.throw(Error, "Given string is not actually a string or it's empty!");
-  });
-
-  it('should throw an error when given an empty string', function () {
-    let thrower = () => jsonFromText('');
+    const thrower = () => jsonFromText('');
     expect(thrower).to.throw(Error, "Given string is not actually a string or it's empty!");
   });
 
   it('should throe an error when given ill-formed embedded JSON objects', function () {
-    let thrower = () => jsonFromText('This {"word": "should" fail.');
+    const thrower = () => jsonFromText('This {"word": "should" fail.');
     expect(thrower).to.throw(Error, 'Unbalanced amount of JSON-specific token (i.e. {, }, [, ]');
   });
 });

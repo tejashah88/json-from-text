@@ -1,7 +1,7 @@
 'use strict';
 
-let jsonic = require('jsonic');
-let matchRecursive = require('xregexp').matchRecursive;
+const jsonic = require('jsonic');
+const matchRecursive = require('xregexp').matchRecursive;
 
 function jsonFromText(mixedStr, parseToObject) {
   if (typeof mixedStr !== 'string' || mixedStr === '')
@@ -19,17 +19,27 @@ function jsonFromText(mixedStr, parseToObject) {
       throw error;
   }
 
-  let textResults = [], jsonResults = [], fullResults = [];
+  const textResults = [], jsonResults = [], fullResults = [];
 
   for (let i = 0; i < rawTokens.length; i++) {
     if (rawTokens[i].name == 'left') {
-      let jsonStr = rawTokens.slice(i, i + 3).map(result => result.value).join('');
-      let jsonObj = parseToObject ? jsonic(jsonStr) : jsonStr;
+      const jsonStr = rawTokens.slice(i, i + 3).map(result => result.value).join('');
+      let jsonObj;
+      if (parseToObject) {
+        try {
+          jsonObj = jsonic(jsonStr);
+        } catch (err) {
+          jsonObj = jsonStr;
+        }
+      } else {
+        jsonObj = jsonStr;
+      }
+
       jsonResults.push(jsonObj);
-      fullResults.push({ type: 'json', value: jsonObj });
+      fullResults.push({ type: 'json', value: jsonObj, parsed: typeof jsonObj !== 'string' });
       i += 2;
     } else {
-      let text = rawTokens[i].value;
+      const text = rawTokens[i].value;
       textResults.push(text);
       fullResults.push({ type: 'text', value: text });
     }

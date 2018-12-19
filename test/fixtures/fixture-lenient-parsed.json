@@ -19,6 +19,7 @@
     },
     {
       "type": "json",
+      "parsed": true,
       "value": {
         "animal": "fox"
       }
@@ -29,6 +30,7 @@
     },
     {
       "type": "json",
+      "parsed": true,
       "value": {
         "attribute": "lazy"
       }

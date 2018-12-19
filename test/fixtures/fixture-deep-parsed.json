@@ -4,7 +4,14 @@
     " world would that be?"
   ],
   "jsonResults": [
-    "{'word': world, map: {'one': 1, 'two': 2, 'three': 3}}"
+    {
+      "map": {
+        "one": 1,
+        "two": 2,
+        "three": 3
+      },
+      "word": "world"
+    }
   ],
   "fullResults": [
     {
@@ -13,7 +20,15 @@
     },
     {
       "type": "json",
-      "value": "{'word': world, map: {'one': 1, 'two': 2, 'three': 3}}"
+      "parsed": true,
+      "value": {
+        "map": {
+          "one": 1,
+          "two": 2,
+          "three": 3
+        },
+        "word": "world"
+      }
     },
     {
       "type": "text",

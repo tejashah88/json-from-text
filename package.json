@@ -2,10 +2,10 @@
   "name": "json-from-text",
   "version": "1.0.0",
   "description": "An algorithm for separating embedded JSON from a string, nicely packaged into a node.js module.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "mocha",
-    "test-with-coverage": "nyc mocha",
+    "test": "mocha test/**/*.js",
+    "test-with-coverage": "nyc mocha test/**/*.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint *.js --format table",
     "lint-fix": "eslint *.js --fix"
@@ -28,8 +28,8 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "coveralls": "^3.0.2",
-    "eslint": "^5.6.1",
+    "eslint": "^5.10.0",
     "mocha": "^5.2.0",
-    "nyc": "^13.0.1"
+    "nyc": "^13.1.0"
   }
 }

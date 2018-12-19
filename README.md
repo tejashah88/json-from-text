@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/tejashah88/json-from-text/badge.svg)](https://coveralls.io/github/tejashah88/json-from-text)
 [![dependencies Status](https://david-dm.org/tejashah88/json-from-text/status.svg)](https://david-dm.org/tejashah88/json-from-text)
 
-An algorithm for separating embedded JSON from a string, nicely packaged into an NPM module.
+An algorithm for separating embedded JSON from a string, nicely packaged into an NPM module. It will attempt to parse potential JSON strings into objects and leave them as-is if it fails.
 
 ## Upgrading from < 1.0
 If you are upgrading from < 1.0, please see [UPGRADING](UPGRADING.md) for migration instructions.
@@ -53,6 +53,7 @@ console.log(JSON.stringify(results, null, 2));
     },
     {
       "type": "json",
+      "parsed": true,
       "value": {
         "animal": "dog",
         "color": "blue"
@@ -64,6 +65,7 @@ console.log(JSON.stringify(results, null, 2));
     },
     {
       "type": "json",
+      "parsed": true,
       "value": {
         "animal": "cat",
         "color": "red"

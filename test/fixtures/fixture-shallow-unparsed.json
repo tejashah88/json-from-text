@@ -5,14 +5,8 @@
     "'"
   ],
   "jsonResults": [
-    {
-      "animal": "dog",
-      "color": "blue"
-    },
-    {
-      "animal": "cat",
-      "color": "red"
-    }
+    "{'animal':'dog', 'color':'blue'}",
+    "{'animal':'cat', 'color':'red'}"
   ],
   "fullResults": [
     {
@@ -21,10 +15,8 @@
     },
     {
       "type": "json",
-      "value": {
-        "animal": "dog",
-        "color": "blue"
-      }
+      "parsed": false,
+      "value": "{'animal':'dog', 'color':'blue'}"
     },
     {
       "type": "text",
@@ -32,10 +24,8 @@
     },
     {
       "type": "json",
-      "value": {
-        "animal": "cat",
-        "color": "red"
-      }
+      "parsed": false,
+      "value": "{'animal':'cat', 'color':'red'}"
     },
     {
       "type": "text",
